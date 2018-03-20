@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>miw</groupId>
-	<artifactId>restservices</artifactId>
+	<groupId>com</groupId>
+	<artifactId>meetupws</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>restservices Maven Webapp</name>
+	<name>MeetupWS Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<parent>
@@ -13,18 +13,6 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.10.RELEASE</version>
 	</parent>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-stream-dependencies</artifactId>
-				<version>Elmhurst.RC3</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -46,10 +34,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
 			<artifactId>json-path</artifactId>
 			<scope>test</scope>
@@ -60,33 +44,18 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-stream</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-stream-kafka</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
-			<version>1.0.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>com.jayway.restassured</groupId>
 			<artifactId>json-path</artifactId>
 			<version>2.4.0</version>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>
@@ -104,7 +73,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>restservices</finalName>
+		<finalName>meetupws</finalName>
 	</build>
 	<repositories>
 		<repository>

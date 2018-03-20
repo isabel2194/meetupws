@@ -2,6 +2,7 @@ package meetup.ws.rest;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.ws.rs.core.MediaType;
 
@@ -23,8 +24,14 @@ public class RestServices {
 	}
 	
 	@GetMapping(path="/topCities",produces=MediaType.APPLICATION_JSON)
-	public List<String> getTopCitiesWithMostPersonsInDate(Date date){
+	public Map<String,Integer> getTopCitiesWithMostPersonsInDate(Date date){
 		return rsvpService.getTopCities(date);
+	}
+	
+	@GetMapping(path="/rsvp")
+	public void getRSVP(){
+		System.out.println("recurso rsvp");
+		rsvpService.saveRsvp();
 	}
 
 }

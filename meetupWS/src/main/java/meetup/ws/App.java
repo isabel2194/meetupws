@@ -1,29 +1,29 @@
 package meetup.ws;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Sink;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-import meetup.ws.services.RSVPServiceImpl;
+//import meetup.ws.listeners.ContextListener;
 
 @SpringBootApplication
-@EnableBinding(Sink.class)
-public class App {
-	
-	@Autowired
-	RSVPServiceImpl rsvpService;
+@EnableScheduling
+public class App /*extends SpringBootServletInitializer*/ {
+
+	/*@Override
+	public void onStartup(ServletContext servletContext) throws ServletException {
+		super.onStartup(servletContext);
+
+		servletContext.addListener(new ContextListener());
+	}*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
 
-	}
-
-	@StreamListener(Sink.INPUT)
-	public void saveRSVP() {
-		rsvpService.saveRsvp();
 	}
 
 }

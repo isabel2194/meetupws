@@ -2,6 +2,7 @@ package meetup.ws.services;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public interface RSVPService {
 	
@@ -9,6 +10,6 @@ public interface RSVPService {
 	
 	public List<String> getNearGroups(double lat, double lon);
 	
-	public List<String> getTopCities(Date date);
+	public Map<String, Integer> getTopCities(Date date);
 
 }
