@@ -1,20 +1,20 @@
 package meetup.ws.model;
 
-import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+/**
+ * Model with the data that we will need to save from the rsvp messages.
+ * @author Isabel
+ */
 @Document(collection = "rsvp")
 public class RSVP {
 
 	@Id
 	private int id;
 
-	@DateTimeFormat(iso = ISO.DATE_TIME)
-	private Date date;
+	//@DateTimeFormat(iso = ISO.DATE_TIME , pattern="yyyy-MM-dd HH:mm:ss")
+	private String date;
 
 	private double lat;
 
@@ -25,16 +25,18 @@ public class RSVP {
 	private String country;
 	
 	private String state;
+	
+	public RSVP(){}
 
 	public int getId() {
 		return id;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

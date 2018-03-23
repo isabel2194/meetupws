@@ -1,15 +1,17 @@
 package meetup.ws.services;
 
-import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
+/**
+ * Interface of the service layer
+ * @author Isabel
+ */
 public interface RSVPService {
 	
-	public boolean saveRsvp();
+	public void saveRsvp(String result);
 	
-	public List<String> getNearGroups(double lat, double lon);
+	public int getNearGroups(double lat, double lon);
 	
-	public Map<String, Integer> getTopCities(Date date);
+	public Map<String, Integer> getTopCities(String date);
 
 }

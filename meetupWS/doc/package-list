@@ -1,0 +1,6 @@
+meetup.ws
+meetup.ws.listeners
+meetup.ws.model
+meetup.ws.repositories
+meetup.ws.rest
+meetup.ws.services
